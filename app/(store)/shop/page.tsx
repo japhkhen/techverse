@@ -44,7 +44,7 @@ export default async function ShopPage({
   };
 
   return (
-    <div className="mx-auto max-w-[1180px] px-4 py-8 sm:px-6">
+    <div className="mx-auto w-full max-w-[1920px] px-4 py-8 sm:px-6">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <h1 className="text-3xl font-extrabold tracking-tight">{params.q ? `Results for “${params.q}”` : "Shop gadgets"}</h1>

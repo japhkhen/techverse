@@ -19,12 +19,12 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   const related = products.filter((item) => item.category?.slug === product.category?.slug && item.id !== product.id).slice(0, 4);
 
   return (
-    <div className="mx-auto max-w-[1180px] px-4 py-8 sm:px-6">
+    <div className="mx-auto w-full max-w-[1920px] px-4 py-8 sm:px-6">
       <p className="text-xs font-semibold text-neutral-500">
         <Link href="/shop">Shop</Link>
         {product.category ? <> / <Link href={`/shop?category=${product.category.slug}`}>{product.category.name}</Link></> : null}
       </p>
-      <div className="mt-4 grid items-start gap-8 lg:grid-cols-2">
+      <div className="mt-4 grid items-start gap-8 min-[900px]:grid-cols-2">
         <div className="relative aspect-square overflow-hidden rounded-[28px] bg-[#f6f6f6]">
           <Image src={product.image_url} alt={product.name} fill className="object-contain p-10" priority />
         </div>

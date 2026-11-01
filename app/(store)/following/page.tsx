@@ -19,7 +19,7 @@ export default async function FollowingPage() {
   const saved = products.filter((product) => session.follows.includes(product.id));
   const boards = ideas.filter((idea) => session.ideaFollows.includes(idea.id));
   return (
-    <div className="mx-auto max-w-[1180px] px-4 py-8 sm:px-6">
+    <div className="mx-auto w-full max-w-[1920px] px-4 py-8 sm:px-6">
       <h1 className="text-3xl font-extrabold tracking-tight">Following</h1>
       <section className="mt-6">
         <h2 className="text-xl font-extrabold">Saved gadgets</h2>

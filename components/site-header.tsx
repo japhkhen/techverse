@@ -34,7 +34,7 @@ export function SiteHeader({ signedIn, admin }: { signedIn: boolean; admin: bool
   return (
     <header className="sticky top-0 z-40 border-b border-neutral-200 bg-white/95 backdrop-blur">
       <div className="bg-neutral-950 text-white">
-        <div className="mx-auto flex max-w-[1180px] items-center justify-between gap-3 px-4 py-1.5 text-[11px] sm:px-6">
+        <div className="mx-auto flex w-full max-w-[1920px] items-center justify-between gap-3 px-4 py-1.5 text-[11px] sm:px-6">
           <p>
             {STORE.city}, {STORE.country}
           </p>
@@ -45,16 +45,16 @@ export function SiteHeader({ signedIn, admin }: { signedIn: boolean; admin: bool
           </p>
         </div>
       </div>
-      <div className="mx-auto flex max-w-[1180px] items-center gap-3 px-4 py-3 sm:px-6">
+      <div className="mx-auto flex w-full max-w-[1920px] items-center gap-3 px-4 py-3 sm:px-6">
         <Link href="/" className="flex shrink-0 items-center gap-2.5">
           <span className="grid h-10 w-10 place-items-center rounded-xl bg-brand text-white">
             <svg viewBox="0 0 32 32" className="h-6 w-6" aria-hidden>
               <path d="M8.5 9.5h4.1l3.4 8.4 3.4-8.4h4.1L16.8 23h-3.6L8.5 9.5z" fill="currentColor" />
             </svg>
           </span>
-          <span className="hidden sm:block">
+          <span className="hidden min-[760px]:block">
             <span className="block text-[17px] font-extrabold leading-none tracking-tight">TechVerse</span>
-            <span className="mt-1 block text-[11px] text-neutral-500">{STORE.tagline}</span>
+            <span className="mt-1 hidden text-[11px] text-neutral-500 xl:block">{STORE.tagline}</span>
           </span>
         </Link>
         <form action="/shop" className="relative min-w-0 flex-1">
@@ -69,7 +69,7 @@ export function SiteHeader({ signedIn, admin }: { signedIn: boolean; admin: bool
             <Search className="h-4 w-4" />
           </button>
         </form>
-        <nav className="hidden items-center gap-5 lg:flex">
+        <nav className="hidden shrink-0 items-center gap-3 min-[760px]:flex xl:gap-5">
           {nav.map((item) => {
             const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
             return (
@@ -79,7 +79,7 @@ export function SiteHeader({ signedIn, admin }: { signedIn: boolean; admin: bool
             );
           })}
         </nav>
-        <div className="hidden items-center gap-3 text-neutral-800 lg:flex">
+        <div className="hidden shrink-0 items-center gap-2.5 text-neutral-800 min-[760px]:flex xl:gap-3">
           <Link href="/shop" aria-label="Browse categories"><LayoutGrid className="h-5 w-5" /></Link>
           <Link href={signedIn ? "/account" : "/login"} aria-label="Account"><UserRound className="h-5 w-5" /></Link>
           <Link href={signedIn ? "/orders" : "/login?next=/orders"} aria-label="Orders"><Bell className="h-5 w-5" /></Link>
@@ -88,16 +88,16 @@ export function SiteHeader({ signedIn, admin }: { signedIn: boolean; admin: bool
             {count > 0 ? <span className="absolute -right-2 -top-2 grid h-4 min-w-4 place-items-center rounded-full bg-brand px-1 text-[10px] font-bold text-white">{count}</span> : null}
           </Link>
         </div>
-        <Link href="/cart" className="relative grid h-10 w-10 place-items-center rounded-full border border-neutral-200 lg:hidden" aria-label="Cart">
+        <Link href="/cart" className="relative grid h-10 w-10 shrink-0 place-items-center rounded-full border border-neutral-200 min-[760px]:hidden" aria-label="Cart">
           <ShoppingBag className="h-4 w-4" />
           {count > 0 ? <span className="absolute -right-1 -top-1 grid h-4 min-w-4 place-items-center rounded-full bg-brand px-1 text-[10px] font-bold text-white">{count}</span> : null}
         </Link>
-        <button type="button" className="grid h-10 w-10 place-items-center rounded-full border border-neutral-200 lg:hidden" onClick={() => setOpen((value) => !value)} aria-label="Menu">
+        <button type="button" className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-neutral-200 min-[760px]:hidden" onClick={() => setOpen((value) => !value)} aria-label="Menu">
           {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
         </button>
       </div>
       {open ? (
-        <div className="space-y-2 border-t border-neutral-100 px-4 py-3 lg:hidden">
+        <div className="space-y-2 border-t border-neutral-100 px-4 py-3 min-[760px]:hidden">
           {nav.map((item) => (
             <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="block rounded-xl px-3 py-2 text-sm font-semibold hover:bg-neutral-50">
               {item.label}
@@ -107,13 +107,13 @@ export function SiteHeader({ signedIn, admin }: { signedIn: boolean; admin: bool
           {admin ? <Link href="/admin" onClick={() => setOpen(false)} className="block rounded-xl px-3 py-2 text-sm font-semibold text-brand">Admin</Link> : null}
         </div>
       ) : null}
-      <div className="mx-auto flex max-w-[1180px] items-center gap-3 px-4 pb-3 sm:px-6">
-        <div className="flex min-w-0 flex-1 gap-2 overflow-x-auto">
+      <div className="mx-auto flex w-full max-w-[1920px] items-center gap-3 px-4 pb-3 sm:px-6">
+        <div className="flex min-w-0 flex-1 gap-1.5 overflow-x-auto min-[760px]:flex-wrap min-[760px]:overflow-visible">
           {chips.map((chip) => {
             const Icon = chip.icon;
             const active = category === chip.key;
             return (
-              <Link key={chip.key} href={chip.href} className={`inline-flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold ${active ? "border-brand bg-red-50 text-brand" : "border-neutral-200 text-neutral-700 hover:bg-neutral-50"}`}>
+              <Link key={chip.key} href={chip.href} className={`inline-flex shrink-0 items-center gap-1.5 rounded-full border px-2.5 py-1.5 text-xs font-semibold ${active ? "border-brand bg-red-50 text-brand" : "border-neutral-200 text-neutral-700 hover:bg-neutral-50"}`}>
                 <Icon className="h-3.5 w-3.5" />
                 {chip.label}
               </Link>

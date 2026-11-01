@@ -12,7 +12,7 @@ const points = [
 export function SiteFooter() {
   return (
     <footer className="mt-8 border-t border-neutral-200">
-      <div className="mx-auto grid max-w-[1180px] gap-6 px-4 py-8 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
+      <div className="mx-auto grid w-full max-w-[1920px] gap-6 px-4 py-8 sm:grid-cols-2 sm:px-6 min-[900px]:grid-cols-4">
         {points.map((point) => {
           const Icon = point.icon;
           return (
@@ -29,7 +29,7 @@ export function SiteFooter() {
         })}
       </div>
       <div className="border-t border-neutral-100">
-        <div className="mx-auto flex max-w-[1180px] flex-col gap-4 px-4 py-6 text-sm text-neutral-600 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+        <div className="mx-auto flex w-full max-w-[1920px] flex-col gap-4 px-4 py-6 text-sm text-neutral-600 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <div>
             <p className="font-extrabold text-neutral-950">TechVerse</p>
             <p>{STORE.city}, {STORE.country}</p>
@@ -46,7 +46,7 @@ export function SiteFooter() {
             ))}
           </div>
         </div>
-        <div className="mx-auto flex max-w-[1180px] flex-wrap gap-4 px-4 pb-8 text-xs text-neutral-500 sm:px-6">
+        <div className="mx-auto flex w-full max-w-[1920px] flex-wrap gap-4 px-4 pb-8 text-xs text-neutral-500 sm:px-6">
           <Link href="/shop" className="hover:text-brand">Shop</Link>
           <Link href="/today" className="hover:text-brand">Today</Link>
           <Link href="/account" className="hover:text-brand">Account</Link>

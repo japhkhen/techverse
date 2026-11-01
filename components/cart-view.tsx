@@ -20,7 +20,7 @@ export function CartView({ rate }: { rate: number }) {
   }
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[1.4fr_0.8fr]">
+    <div className="grid gap-8 min-[900px]:grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)]">
       <div className="space-y-4">
         {items.map((item) => (
           <div key={item.productId} className="flex gap-4 rounded-2xl border border-neutral-200 p-3">

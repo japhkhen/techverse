@@ -52,11 +52,11 @@ export function Hero({ products }: { products: Product[] }) {
   const shown = useMemo(() => takeProducts(products, slide.pick), [products, slide]);
 
   return (
-    <section className="mx-auto max-w-[1180px] px-4 pt-5 sm:px-6">
-      <div className="grid overflow-hidden rounded-[28px] border border-neutral-200 bg-white shadow-[0_12px_40px_rgba(0,0,0,0.05)] lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="flex flex-col justify-center px-6 py-8 sm:px-10 sm:py-12">
+    <section className="mx-auto w-full max-w-[1920px] px-4 pt-5 sm:px-6">
+      <div className="grid overflow-hidden rounded-[28px] border border-neutral-200 bg-white shadow-[0_12px_40px_rgba(0,0,0,0.05)] min-[760px]:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)]">
+        <div className="flex min-w-0 flex-col justify-center px-6 py-7 sm:px-8 sm:py-8">
           <p className="text-sm font-semibold text-neutral-500">{slide.kicker}</p>
-          <h1 className="mt-3 max-w-md text-5xl font-extrabold leading-[0.95] tracking-tight sm:text-6xl">
+          <h1 className="mt-3 max-w-md text-4xl font-extrabold leading-[0.95] tracking-tight min-[760px]:text-5xl xl:text-6xl">
             {slide.title}
             <span className="block text-brand">{slide.accent}</span>
           </h1>
@@ -74,7 +74,7 @@ export function Hero({ products }: { products: Product[] }) {
             <span className="inline-flex items-center gap-1"><Truck className="h-3.5 w-3.5" /> Fast Shipping</span>
           </div>
         </div>
-        <div className="flex flex-col bg-brand p-4 sm:p-5">
+        <div className="flex min-w-0 flex-col bg-brand p-3 sm:p-4">
           <div className="mb-3 flex items-center justify-between gap-3">
             <p className="text-sm font-bold text-white">{slide.label}</p>
             <div className="grid h-16 w-16 place-items-center rounded-full bg-white text-center shadow-lg">
@@ -89,9 +89,9 @@ export function Hero({ products }: { products: Product[] }) {
               <Link
                 key={product.id}
                 href={`/product/${product.slug}`}
-                className="flex min-w-0 items-center gap-3 rounded-2xl bg-white p-2.5 shadow-[0_8px_24px_rgba(0,0,0,0.12)] transition hover:-translate-y-0.5"
+                className="flex min-w-0 items-center gap-2.5 rounded-2xl bg-white p-2 shadow-[0_8px_24px_rgba(0,0,0,0.12)] transition hover:-translate-y-0.5"
               >
-                <span className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-neutral-100 sm:h-[72px] sm:w-[72px]">
+                <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl bg-neutral-100 min-[1100px]:h-16 min-[1100px]:w-16">
                   <Image src={product.image_url} alt="" fill sizes="72px" className="object-contain p-1.5" />
                 </span>
                 <span className="min-w-0">

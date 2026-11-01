@@ -24,7 +24,7 @@ export function CheckoutForm({ rate, profile }: { rate: number; profile: Profile
 
   return (
     <form
-      className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]"
+      className="grid gap-8 min-[900px]:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]"
       onSubmit={async (event) => {
         event.preventDefault();
         setPending(true);

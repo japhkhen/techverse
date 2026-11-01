@@ -15,7 +15,7 @@ export default async function IdeaPage({ params }: { params: Promise<{ slug: str
   const [data, session] = await Promise.all([getIdea(slug), getSession()]);
   if (!data) notFound();
   return (
-    <div className="mx-auto max-w-[1180px] px-4 py-8 sm:px-6">
+    <div className="mx-auto w-full max-w-[1920px] px-4 py-8 sm:px-6">
       <Link href="/ideas" className="text-xs font-semibold text-neutral-500">All ideas</Link>
       <div className="mt-2 flex flex-wrap items-center justify-between gap-3">
         <div>

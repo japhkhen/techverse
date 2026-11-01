@@ -7,7 +7,7 @@ export const metadata = { title: "Ideas" };
 export default async function IdeasPage() {
   const ideas = await getIdeas();
   return (
-    <div className="mx-auto max-w-[1180px] px-4 py-8 sm:px-6">
+    <div className="mx-auto w-full max-w-[1920px] px-4 py-8 sm:px-6">
       <h1 className="text-3xl font-extrabold tracking-tight">Ideas for your next upgrade</h1>
       <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {ideas.map((idea) => (

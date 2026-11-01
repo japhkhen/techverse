@@ -29,7 +29,7 @@ export default async function HomePage() {
   return (
     <>
       <Hero products={products} />
-      <section className="mx-auto grid max-w-[1180px] gap-3 px-4 py-6 sm:grid-cols-2 sm:px-6 lg:grid-cols-5">
+      <section className="mx-auto grid w-full max-w-[1920px] gap-3 px-4 py-6 sm:grid-cols-2 sm:px-6 min-[900px]:grid-cols-3 xl:grid-cols-5">
         {categories.map((category) => {
           const Icon = category.icon;
           return (
@@ -44,16 +44,16 @@ export default async function HomePage() {
           );
         })}
       </section>
-      <section className="mx-auto max-w-[1180px] px-4 sm:px-6">
+      <section className="mx-auto w-full max-w-[1920px] px-4 sm:px-6">
         <div className="mb-4 flex items-center justify-between">
           <h2 className="text-2xl font-extrabold tracking-tight">Trending Products</h2>
           <Link href="/shop" className="text-sm font-semibold text-neutral-500">View all</Link>
         </div>
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-4 min-[760px]:grid-cols-3 xl:grid-cols-6">
           {trending.map((product) => <ProductCard key={product.id} product={product} signedIn={Boolean(session.user)} />)}
         </div>
       </section>
-      <section className="mx-auto mt-8 grid max-w-[1180px] gap-4 px-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
+      <section className="mx-auto mt-8 grid w-full max-w-[1920px] gap-4 px-4 sm:grid-cols-2 sm:px-6 min-[900px]:grid-cols-4">
         {trust.map((item) => {
           const Icon = item.icon;
           return (
@@ -67,7 +67,7 @@ export default async function HomePage() {
           );
         })}
       </section>
-      <section id="ideas" className="mx-auto mt-10 max-w-[1180px] px-4 sm:px-6">
+      <section id="ideas" className="mx-auto mt-10 w-full max-w-[1920px] px-4 sm:px-6">
         <div className="mb-4 flex items-center justify-between">
           <h2 className="text-2xl font-extrabold tracking-tight">Ideas for Your Next Upgrade</h2>
           <Link href="/ideas" className="text-sm font-semibold text-neutral-500">See more ideas</Link>
@@ -86,7 +86,7 @@ export default async function HomePage() {
           ))}
         </div>
       </section>
-      <section className="mx-auto mt-10 grid max-w-[1180px] gap-4 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr]">
+      <section className="mx-auto mt-10 grid w-full max-w-[1920px] gap-4 px-4 sm:px-6 min-[900px]:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
         <div className="rounded-[28px] bg-brand p-8 text-white">
           <Gift className="h-8 w-8" />
           <h2 className="mt-4 text-3xl font-extrabold leading-tight">Exclusive Deals for You!</h2>

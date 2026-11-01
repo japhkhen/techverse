@@ -8,7 +8,7 @@ export default async function TodayPage() {
   const deals = products.filter((product) => product.is_deal);
   const fresh = products.filter((product) => product.is_new);
   return (
-    <div className="mx-auto max-w-[1180px] px-4 py-8 sm:px-6">
+    <div className="mx-auto w-full max-w-[1920px] px-4 py-8 sm:px-6">
       <p className="text-sm font-semibold text-brand">Today in Accra</p>
       <h1 className="mt-1 text-4xl font-extrabold tracking-tight">Deals and new arrivals</h1>
       <section className="mt-8">

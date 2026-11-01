@@ -16,7 +16,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   if (session.profile?.role !== "admin") redirect("/");
   return (
     <div className="min-h-screen bg-[#f6f6f6]">
-      <div className="mx-auto grid max-w-[1180px] gap-6 px-4 py-6 lg:grid-cols-[220px_1fr]">
+      <div className="mx-auto grid w-full max-w-[1920px] gap-6 px-4 py-6 lg:grid-cols-[220px_1fr]">
         <aside className="h-fit rounded-3xl bg-white p-4">
           <Link href="/" className="text-lg font-extrabold">TechVerse</Link>
           <p className="text-xs text-neutral-500">Store admin · Accra</p>
